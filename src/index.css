@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 7%;
+    --foreground: 240 10% 95%;
+
+    --card: 260 30% 12%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 260 30% 12%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 290 100% 50%;
+    --primary-foreground: 240 10% 95%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 260 30% 20%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 260 30% 15%;
+    --accent-foreground: 240 10% 95%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 240 10% 95%;
+
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 290 100% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 260 30% 7%;
+    --foreground: 240 10% 95%;
+
+    --card: 260 30% 12%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 260 30% 12%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 290 100% 50%;
+    --primary-foreground: 240 10% 95%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 260 30% 20%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 260 30% 15%;
+    --accent-foreground: 240 10% 95%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 240 10% 95%;
+
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 290 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-game-bg text-foreground;
+  }
+}
+
+@layer components {
+  .game-cell {
+    @apply flex items-center justify-center bg-game-cell rounded-lg shadow-md 
+           transition-all duration-300 ease-in-out text-5xl sm:text-6xl
+           hover:bg-game-hover hover:shadow-lg transform hover:-translate-y-1
+           cursor-pointer;
+  }
+
+  .game-cell-disabled {
+    @apply opacity-50 cursor-not-allowed transform-none hover:translate-y-0 hover:bg-game-cell;
+  }
+  
+  .game-cell-winner {
+    @apply bg-opacity-80 bg-neon-purple animate-pulse-neon;
+  }
+  
+  .emoji-enter {
+    @apply animate-scale-in;
+  }
+  
+  .emoji-exit {
+    @apply animate-fade-out;
+  }
+  
+  .category-button {
+    @apply px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300
+           hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50;
+  }
+}
